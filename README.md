@@ -1,10 +1,10 @@
 # clinical-trial-matching-service
 
-[![Node.js CI](https://github.com/mcode/clinical-trial-matching-service/actions/workflows/node.js.yml/badge.svg)](https://github.com/mcode/clinical-trial-matching-service/actions/workflows/node.js.yml)
+[![Node.js CI](https://github.com/EssexManagement/clinical-trial-matching-service/actions/workflows/node.js.yml/badge.svg)](https://github.com/EssexManagement/clinical-trial-matching-service/actions/workflows/node.js.yml)
 
 Provides a generic backend library for Clinical Trial Matching Service implementations. This provides the generic shell for services that connect to an actual clinical trial matching service. It receives a FHIR Bundle of patient information, and then uses that to generate a FHIR search result that contains FHIR ResearchStudy objects that describe matching clinical trials.
 
-For more information on the architecture and data schemas of the clinical trial matching system, please visit the [clinical-trial-matching-app wiki](https://github.com/mcode/clinical-trial-matching-app/wiki).
+For more information on the architecture and data schemas of the clinical trial matching system, please visit the [clinical-trial-matching-app wiki](https://github.com/EssexManagement/clinical-trial-matching-app/wiki).
 
 ## Implementing a Matching Service
 
@@ -57,9 +57,9 @@ Wrappers may work even if the versions don't match exactly, but it's best to try
 
 The `ClinicalTrialMatchingService` can optionally take a `Configuration` object that describes the server's configuration.
 
- * `port` - the port to listen on, must be in the range 0-65535. If 0, a default open port is used.
- * `host` - the host address to bind to
- * `urlPrefix` - if given, the prefix to use for all configured request paths (note that it's normalized: `"/prefix"` and `"prefix/"` both cause the application to generate paths that begin with `"/prefix/"`.)
+- `port` - the port to listen on, must be in the range 0-65535. If 0, a default open port is used.
+- `host` - the host address to bind to
+- `urlPrefix` - if given, the prefix to use for all configured request paths (note that it's normalized: `"/prefix"` and `"prefix/"` both cause the application to generate paths that begin with `"/prefix/"`.)
 
 For more information about how `port` and `host` are used, read the [Node.js `net.Server#listen` documentation](https://nodejs.org/dist/latest-v20.x/docs/api/net.html#net_server_listen_port_host_backlog_callback).
 
@@ -67,10 +67,10 @@ Note: If the `PASSENGER_BASE_URI` environment variable is set, this is used as t
 
 The `configFromEnv()` helper function can be used to pull in all environment variables (or all environment variables starting with a given prefix) into a configuration object that can be passed to the `ClinicalTrialMatchingService` constructor. The function will remove the prefix (if one is given) and lowercase the key for all environment variables in the final configuration (meaning `PORT` and `port` both specify a value for `port`). The function has the following overloads:
 
- * `configFromEnv()` - load all environment variables in `process.env` with no prefix
- * `configFromEnv(prefix: string)` - load all environment variables in `process.env` with the given prefix
- * `configFromEnv(env: Record<string, string | undefined>)` - convert the given object
- * `configFromEnv(prefix: string, env: Record<string, string | undefined>)` - using the given prefix, convert the given object
+- `configFromEnv()` - load all environment variables in `process.env` with no prefix
+- `configFromEnv(prefix: string)` - load all environment variables in `process.env` with the given prefix
+- `configFromEnv(env: Record<string, string | undefined>)` - convert the given object
+- `configFromEnv(prefix: string, env: Record<string, string | undefined>)` - using the given prefix, convert the given object
 
 It is recommended that you use something like [dotenv-flow](https://github.com/kerimdzhanov/dotenv-flow) to load configuration into the environment and then this helper to create the configuration itself.
 
@@ -97,16 +97,18 @@ Generate a new ID that can be used on a contained resource. At present this does
 ### `addContact`
 
 This has two overloads:
- * `addContact(contact: ContactDetail): ContactDetail`
- * `addContact(name: string, phone?: string, email?: string): ContactDetail`
+
+- `addContact(contact: ContactDetail): ContactDetail`
+- `addContact(name: string, phone?: string, email?: string): ContactDetail`
 
 Both add a contact to the `contact` field within the ResearchStudy. The first adds the given `ContactDetail` directly, the second one creates it and populates it with the given information. Both return the added `ContactDetail` - for the first, it will be the contact given, on the second, it will be the newly generated `ContactDetail`.
 
 ### `addSite`
 
 This has two overloads:
- * `addSite(location: Location): Location`
- * `addSite(name: string, phone?: string, email?: string): Location`
+
+- `addSite(location: Location): Location`
+- `addSite(name: string, phone?: string, email?: string): Location`
 
 Both add a reference to a Location to the `site` field, and then add the `Location` to the contained resources as via `addContainedResource(resource)`. The given `Location` (first overload) or generated `Location` (second overload) is returned.
 
@@ -132,18 +134,18 @@ The mCODEextractor is a class within the package that can be used to extract mCO
 Construct with: `const extractedMcode = new mcode.mCODEextractor(patientBundle: fhir.Bundle);`
 Then, you can pull out the different objects using the following properties:
 
-  - `primaryCancerConditions: PrimaryCancerCondition[]`
-  - `secondaryCancerConditions: SecondaryCancerCondition[]`
-  - `TNMClinicalStageGroups: fhir.Coding[]`
-  - `TNMPathologicalStageGroups: fhir.Coding[]`
-  - `birthDate: string | null`
-  - `tumorMarkers: TumorMarker[]`
-  - `cancerGeneticVariants: CancerGeneticVariant[]`
-  - `cancerRelatedRadiationProcedures: CancerRelatedRadiationProcedure[]`
-  - `cancerRelatedSurgicalProcedures: CancerRelatedSurgicalProcedure[]`
-  - `cancerRelatedMedicationStatements: fhir.Coding[]`
-  - `ecogPerformanceStatus: number`
-  - `karnofskyPerformanceStatus: number`
+- `primaryCancerConditions: PrimaryCancerCondition[]`
+- `secondaryCancerConditions: SecondaryCancerCondition[]`
+- `TNMClinicalStageGroups: fhir.Coding[]`
+- `TNMPathologicalStageGroups: fhir.Coding[]`
+- `birthDate: string | null`
+- `tumorMarkers: TumorMarker[]`
+- `cancerGeneticVariants: CancerGeneticVariant[]`
+- `cancerRelatedRadiationProcedures: CancerRelatedRadiationProcedure[]`
+- `cancerRelatedSurgicalProcedures: CancerRelatedSurgicalProcedure[]`
+- `cancerRelatedMedicationStatements: fhir.Coding[]`
+- `ecogPerformanceStatus: number`
+- `karnofskyPerformanceStatus: number`
 
 ## CodeMapper
 
