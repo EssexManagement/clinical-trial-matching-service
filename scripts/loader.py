@@ -2,6 +2,10 @@
 #
 # usage: loader.py [-h] [-r RESULT_DIRECTORY] [-e] [-s] record_directory
 #
+# If you need to test a lot of different patient values
+# 10 patients, 10 values what trials come back?
+# Provide a directory of FHIR patient bundles, reads them, bundles as if it was from the app
+# sends to a matching service, and saves off the NCT ids
 #######
 
 import argparse
