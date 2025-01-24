@@ -1,0 +1,1 @@
+The MedicationStatement seems to no longer be recognized by FHIR mCode schema. MedicationRequest seems to have replaced it. This is experienced when uploading test patients to the r4 smart on FHIR server. Only MedicationRequest is parsed by the app.
