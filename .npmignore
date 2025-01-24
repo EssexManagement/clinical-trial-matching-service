@@ -17,6 +17,7 @@
 /.prettierrc
 /tsconfig.json
 /tsconfig.*.json
+/.vscode
 
 # Do not package test scripts
 /scripts
