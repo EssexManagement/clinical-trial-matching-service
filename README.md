@@ -16,7 +16,7 @@ import ClinicalTrialMatchingService, {
   QueryParameters,
   ResearchStudy,
   SearchSet
-} from 'clinical-trial-matching-service';
+} from '@EssexManagement/clinical-trial-matching-service';
 // Import the actual implementation which is outside the scope
 import findMatchingServices from './matching-implementation';
 
