@@ -52,7 +52,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Publish to GitHub
         run: |
-          npm version from-git
+          npm version from-git --allow-same-version
           git push
           npm publish
         env:
