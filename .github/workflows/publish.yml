@@ -20,6 +20,10 @@ jobs:
         with:
           ref: 'master'
           fetch-depth: 0
+      - uses: actions/setup-node@4
+        with:
+          node-version: '22'
+      - run: npm ci
       - name: Authenticate with private NPM package
         run: |
           echo "//npm.pkg.github.com/:_authToken=${{ secrets.GITHUB_TOKEN }}" >> ~/.npmrc
