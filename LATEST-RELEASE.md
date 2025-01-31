@@ -8,7 +8,6 @@ published:	2025-01-31T19:02:28Z
 url:	https://github.com/EssexManagement/clinical-trial-matching-service/releases/tag/0.1.3
 --
 ## What's Changed
-
 * add docs by @crouchcd in https://github.com/EssexManagement/clinical-trial-matching-service/pull/2
 * replace mcode github references by @crouchcd in https://github.com/EssexManagement/clinical-trial-matching-service/pull/3
 * Transition by @crouchcd in https://github.com/EssexManagement/clinical-trial-matching-service/pull/9
