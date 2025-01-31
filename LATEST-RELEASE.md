@@ -1,11 +1,11 @@
-title:	v0.1.3
-tag:	v0.1.3
+title:	0.1.3
+tag:	0.1.3
 draft:	false
 prerelease:	false
 author:	crouchcd
-created:	2025-01-31T18:24:04Z
-published:	2025-01-31T18:27:17Z
-url:	https://github.com/EssexManagement/clinical-trial-matching-service/releases/tag/v0.1.3
+created:	2025-01-31T19:01:25Z
+published:	2025-01-31T19:02:28Z
+url:	https://github.com/EssexManagement/clinical-trial-matching-service/releases/tag/0.1.3
 --
 ## What's Changed
 * add docs by @crouchcd in https://github.com/EssexManagement/clinical-trial-matching-service/pull/2
@@ -15,4 +15,4 @@ url:	https://github.com/EssexManagement/clinical-trial-matching-service/releases
 ## New Contributors
 * @crouchcd made their first contribution in https://github.com/EssexManagement/clinical-trial-matching-service/pull/2
 
-**Full Changelog**: https://github.com/EssexManagement/clinical-trial-matching-service/commits/v0.1.3
+**Full Changelog**: https://github.com/EssexManagement/clinical-trial-matching-service/commits/0.1.3
