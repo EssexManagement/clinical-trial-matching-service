@@ -7,10 +7,8 @@ import sys
 import xlsxwriter
 
 SERVICES = {
-    "ancora": "http://localhost:3002/getClinicalTrial",
     "carebox": "http://localhost:3004/getClinicalTrial",
     "bct": "http://localhost:3000/getClinicalTrial",
-    "lungevity": "http://localhost:3003/getClinicalTrial",
     "trialjectory": "http://localhost:3001/getClinicalTrial"
 }
 
@@ -92,7 +90,7 @@ def primary_request(code, display, system='http://snomed.info/sct'):
 def main(argv):
     # Collect cli arguments
     argParser = argparse.ArgumentParser()
-    argParser.add_argument("service", choices=["ancora", "bct", "carebox", "lungevity", "trialjectory"], help="Service you want to send the requests to")
+    argParser.add_argument("service", choices=["bct", "carebox", "trialjectory"], help="Service you want to send the requests to")
     argParser.add_argument("cancer", choices=["bladder", "brain", "breast", "colon", "lung", "multipleMyeloma", "prostate"], help="Cancer type you would like to run against")
     argParser.add_argument("-f", "--file", help="Path to the cancerTypes.json file")
     argParser.add_argument("-d", "--directory", help="Directory on where to place results")

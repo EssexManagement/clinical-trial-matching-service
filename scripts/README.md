@@ -7,12 +7,15 @@ Useful scripts to test the other matching services via the [Clinical Trial Match
 - [Python 3](https://www.python.org/downloads/)
   - [pip](https://pypi.org/project/pip/)
 - At least one of the following matching services:
-  - [Ancora](https://github.com/EssexManagement/clinical-trial-matching-service-ancora.ai)
   - [BreastCancerTrials](https://github.com/EssexManagement/clinical-trial-matching-service-breastcancertrials.org)
   - [Carebox](https://github.com/EssexManagement/clinical-trial-matching-service-carebox)
-  - [Lungevity](https://github.com/EssexManagement/clinical-trial-matching-service-lungevity)
   - [TrialScope](https://github.com/EssexManagement/clinical-trial-matching-service-trialscope)
 - [Clinical Trial Matching App](https://github.com/EssexManagement/clinical-trial-matching-app)
+
+### Archived services
+
+- [Ancora](https://github.com/EssexManagement/clinical-trial-matching-service-ancora.ai)
+- [Lungevity](https://github.com/EssexManagement/clinical-trial-matching-service-lungevity)
 
 ## Usage
 
@@ -48,11 +51,11 @@ Purpose of this script is meant to test a single wrapper against all of the prim
 
 ```
 usage: test_cancer_types.py [-h] [-f FILE] [-d DIRECTORY]
-                            {ancora,bct,carebox,lungevity,trialjectory}
+                            {bct,carebox,trialjectory}
                             {bladder,brain,breast,colon,lung,multipleMyeloma,prostate}
 
 positional arguments:
-  {ancora,bct,carebox,lungevity,trialjectory}
+  {bct,carebox,trialjectory}
                         Service you want to send the requests to
   {bladder,brain,breast,colon,lung,multipleMyeloma,prostate}
                         Cancer type you would like to run against
@@ -64,7 +67,7 @@ optional arguments:
                         Directory on where to place results
 ```
 
-- `service {ancora,bct,carebox,lungevity,trialjectory}`: The service/wrapper that you would like to run the script against.
+- `service {bct,carebox,trialjectory}`: The service/wrapper that you would like to run the script against.
 - `cancer_type {bladder,brain,breast,colon,lung,multipleMyeloma,prostate}`: The cancer type that you would like to filter from the app's available primary cancer conditions.
 - `-f FILE, --file FILE` (Optional): Path to where `cancerTypes.json` is defined where ever you have saved [Clinical Trial Matching App](https://github.com/EssexManagement/clinical-trial-matching-app). If you don't want to supply this as an argument, you can also change line 18 to this path. You must do at least one of these.
 - `-d DIRECTORY, --directory DIRECTORY`(Optional): Directory where resulting Excel should be dumped. If not present, will place the resulting Excel file in current working directory.
