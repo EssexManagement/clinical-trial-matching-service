@@ -16,6 +16,7 @@ export { QueryParameters } from './query-parameters';
 export { ClinicalTrialsGovAPI } from './clinicaltrialsgov-api';
 export { createResearchStudyFromClinicalStudy } from './study-fhir-converter';
 export * from './env';
+export * from './dev-cache-client';
 
 // In order to export a default, we need to import it, so import it
 import ClinicalTrialMatchingService, { ClinicalTrialMatcher, Configuration } from './server';
