@@ -53,6 +53,16 @@ The following configuration should be in the `devDependencies` of any wrapper th
 
 Wrappers may work even if the versions don't match exactly, but it's best to try and ensure they remain in sync.
 
+### Redis for development workflow
+
+Redis is an optional dependency to speed up local development through caching. The implementation for it is located in [dev-cache-client.ts](./src/dev-cache-client.ts). To opt in, make sure redis is available in the local node_modules (it should be installed automatically via `optionalDependencies`). Within the local environment variables, make sure NODE_ENV=development, REDIS_HOST=<the hostname of Redis instance>, and REDIS_PORT=<the port of Redis instance>.
+
+To quickly get up and running with a Redis instance, use Docker:
+
+```bash
+docker run -d --name redis-stack -p 6379:6379 redis/redis-stack:latest
+```
+
 ## Configuring the service
 
 The `ClinicalTrialMatchingService` can optionally take a `Configuration` object that describes the server's configuration.
