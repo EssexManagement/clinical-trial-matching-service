@@ -1,14 +1,11 @@
-title:	0.2.0
-tag:	0.2.0
+title:	0.2.1
+tag:	0.2.1
 draft:	false
 prerelease:	false
 author:	crouchcd
-created:	2025-02-24T17:14:07Z
-published:	2025-02-24T17:17:39Z
-url:	https://github.com/EssexManagement/clinical-trial-matching-service/releases/tag/0.2.0
+created:	2025-04-22T17:51:13Z
+published:	2025-04-22T18:29:02Z
+url:	https://github.com/EssexManagement/clinical-trial-matching-service/releases/tag/0.2.1
 --
-## What's Changed
-* [remove lungevity](https://github.com/EssexManagement/clinical-trial-matching-service/commit/37cd5f571393718fa1e59042b6e8d3bf99d963ad)
-* [add development cache to ease load on wrapper endpoints](https://github.com/EssexManagement/clinical-trial-matching-service/commit/374f1a3f0383b1abe1b8db606b98d3580f99b3dc)
-
-**Full Changelog**: https://github.com/EssexManagement/clinical-trial-matching-service/compare/0.1.3...0.2.0
+- [npm audit fix](https://github.com/EssexManagement/clinical-trial-matching-service/commit/36d0591863a09866bc6142cb797f722b3f6bb845)
+**Full Changelog**: https://github.com/EssexManagement/clinical-trial-matching-service/compare/0.2.0...0.2.1
