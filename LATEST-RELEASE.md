@@ -1,11 +1,14 @@
-title:	0.2.1
-tag:	0.2.1
+title:	0.2.2
+tag:	0.2.2
 draft:	false
 prerelease:	false
 author:	crouchcd
-created:	2025-04-22T17:51:13Z
-published:	2025-04-22T18:29:02Z
-url:	https://github.com/EssexManagement/clinical-trial-matching-service/releases/tag/0.2.1
+created:	2025-07-17T18:11:45Z
+published:	2025-07-17T18:18:56Z
+url:	https://github.com/EssexManagement/clinical-trial-matching-service/releases/tag/0.2.2
 --
-- [npm audit fix](https://github.com/EssexManagement/clinical-trial-matching-service/commit/36d0591863a09866bc6142cb797f722b3f6bb845)
-**Full Changelog**: https://github.com/EssexManagement/clinical-trial-matching-service/compare/0.2.0...0.2.1
+## What's Changed
+* Run NPM audit to address tar-fs by @crouchcd in https://github.com/EssexManagement/clinical-trial-matching-service/pull/12
+
+
+**Full Changelog**: https://github.com/EssexManagement/clinical-trial-matching-service/compare/0.2.1...0.2.2
