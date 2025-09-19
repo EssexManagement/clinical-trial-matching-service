@@ -18,7 +18,7 @@ describe('devCacheClientConstructor', () => {
       on: () => {},
       connect: () => {}
     };
-    // @ts-ignore
+    // @ts-expect-error Mocking redis client's API
     spyOn(redis, 'createClient').and.returnValue(mockClient);
 
     const result = await devCacheClientConstructor();
