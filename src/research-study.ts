@@ -29,7 +29,8 @@ export function convertStringsToCodeableConcept(conditions: string | string[]): 
     }
   }
   if (!Array.isArray(conditions)) {
-    conditions = conditions.split(/\s*,\s*/);
+    // Use a simple, safe split to avoid catastrophic backtracking
+    conditions = conditions.split(',').map(s => s.trim());
   }
   const jsonConditions: string[] = conditions;
   const fhirConditions: CodeableConcept[] = [];
