@@ -8,15 +8,15 @@ export class DevCacheClientAbs {
    * Returns the JSON.parsable value located at the key (if any). Always returns null when
    * the client is a noop client.
    */
-  get(key: string): Promise<any> {
+  get(_key: string): Promise<string | null | void> {
     throw Error('Method not implemented.');
   }
   /**
    * Either sets the value in the cache or does nothing if the client is a noop client.
-   * @param key
-   * @param value - stringified before saving in cache
+   * @param _key
+   * @param _value - stringified before saving in cache
    */
-  set(key: string, value: object): Promise<void> {
+  set(_key: string, _value: object): Promise<void> {
     throw Error('Method not implemented');
   }
   /**
@@ -50,7 +50,7 @@ export class DevCacheClient extends DevCacheClientAbs {
     return cached ? JSON.parse(cached) : null;
   }
 
-  async set(key: string, value: any, ttlHours = 24) {
+  async set(key: string, value: string | StringConstructor | object, ttlHours = 24) {
     if (value instanceof String) {
       value = value.toString();
     }
