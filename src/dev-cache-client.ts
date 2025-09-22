@@ -8,7 +8,7 @@ export class DevCacheClientAbs {
    * Returns the JSON.parsable value located at the key (if any). Always returns null when
    * the client is a noop client.
    */
-  get(_key: string): Promise<string | null | void> {
+  get(_key: string): Promise<object | null | void> {
     throw Error('Method not implemented.');
   }
   /**
@@ -45,7 +45,7 @@ export class DevCacheClient extends DevCacheClientAbs {
     }
   }
 
-  async get(key: string) {
+  async get(key: string): Promise<object | null> {
     const cached = await this.client.get(key);
     return cached ? JSON.parse(cached) : null;
   }
