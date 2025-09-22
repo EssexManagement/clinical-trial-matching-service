@@ -1,16 +1,15 @@
-title:	0.2.4
-tag:	0.2.4
+title:	0.2.5
+tag:	0.2.5
 draft:	false
 prerelease:	false
 immutable:	false
 author:	crouchcd
-created:	2025-09-20T14:05:59Z
-published:	2025-09-20T14:15:12Z
-url:	https://github.com/EssexManagement/clinical-trial-matching-service/releases/tag/0.2.4
+created:	2025-09-22T14:09:19Z
+published:	2025-09-22T14:16:32Z
+url:	https://github.com/EssexManagement/clinical-trial-matching-service/releases/tag/0.2.5
 --
 ## What's Changed
-* Fix/security audit by @crouchcd in https://github.com/EssexManagement/clinical-trial-matching-service/pull/14
-* Chore/add lint to ci by @crouchcd in https://github.com/EssexManagement/clinical-trial-matching-service/pull/15
+* add generic types for get/set to resolve downstream type checks by @crouchcd in https://github.com/EssexManagement/clinical-trial-matching-service/pull/17
 
 
-**Full Changelog**: https://github.com/EssexManagement/clinical-trial-matching-service/compare/0.2.3...0.2.4
+**Full Changelog**: https://github.com/EssexManagement/clinical-trial-matching-service/compare/0.2.4...0.2.5
