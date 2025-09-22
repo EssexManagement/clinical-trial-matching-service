@@ -1,6 +1,9 @@
 import type { RedisClientType } from 'redis';
 
 export class DevCacheClientAbs {
+  /**
+   * Connects to the cache or does nothing for noop clients.
+   */
   connect(): Promise<void> {
     throw Error('Method not implemented.');
   }
@@ -8,7 +11,7 @@ export class DevCacheClientAbs {
    * Returns the JSON.parsable value located at the key (if any). Always returns null when
    * the client is a noop client.
    */
-  get(_key: string): Promise<object | null | void> {
+  get<T>(_key: string): Promise<T | null | void> {
     throw Error('Method not implemented.');
   }
   /**
@@ -16,7 +19,7 @@ export class DevCacheClientAbs {
    * @param _key
    * @param _value - stringified before saving in cache
    */
-  set(_key: string, _value: object): Promise<void> {
+  set<T>(_key: string, _value: T): Promise<void> {
     throw Error('Method not implemented');
   }
   /**
@@ -45,12 +48,12 @@ export class DevCacheClient extends DevCacheClientAbs {
     }
   }
 
-  async get(key: string): Promise<object | null> {
+  async get<T>(key: string): Promise<T | null> {
     const cached = await this.client.get(key);
     return cached ? JSON.parse(cached) : null;
   }
 
-  async set(key: string, value: string | StringConstructor | object, ttlHours = 24) {
+  async set<T>(key: string, value: T | string | StringConstructor, ttlHours = 24) {
     if (value instanceof String) {
       value = value.toString();
     }
